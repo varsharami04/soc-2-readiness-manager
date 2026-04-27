@@ -1,6 +1,7 @@
-.idea/
-.vscode/
+# Environment and local secrets
 .env
+
+# Build and runtime outputs
 target/
 node_modules/
 __pycache__/
@@ -8,5 +9,24 @@ chroma_data/
 *.class
 *.jar
 *.log
+
+# IDE and editor files
+.idea/
+.vscode/
+.metadata/
+.settings/
+.classpath
+.project
+.factorypath
+.apt_generated/
+.apt_generated_tests/
+.springBeans
+.sts4-cache/
+*.launch
+*.iml
+
+# Generated documents
+*.pdf
+
+# OS files
 .DS_Store
-/.metadata/
