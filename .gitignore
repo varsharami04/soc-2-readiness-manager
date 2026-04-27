@@ -28,5 +28,7 @@ chroma_data/
 # Generated documents
 *.pdf
 
+.codex
+
 # OS files
 .DS_Store
