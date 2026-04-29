@@ -1,0 +1,27 @@
+Encryption in SOC 2 Compliance
+
+Encryption is a fundamental security control in SOC 2 compliance. It involves
+converting data into an unreadable format to protect it from unauthorized
+access. Encryption ensures the confidentiality and integrity of sensitive data
+both at rest and in transit.
+
+Encryption at rest refers to protecting data stored on devices or in databases.
+Organizations should use strong encryption algorithms such as AES-256 to
+encrypt sensitive data stored on servers, laptops, and other devices. Full
+disk encryption should be implemented on all devices that store sensitive data.
+
+Encryption in transit refers to protecting data as it travels across networks.
+Organizations should use TLS 1.2 or higher to encrypt data transmitted between
+systems. All web applications should use HTTPS to ensure that data is encrypted
+during transmission.
+
+Key management is a critical aspect of encryption. Organizations must implement
+proper procedures for generating, storing, and rotating encryption keys. Keys
+should be stored securely and access to keys should be strictly controlled and
+monitored.
+
+Auditors assess encryption controls by reviewing encryption policies,
+configuration records, and key management procedures. They verify that
+encryption is properly implemented and that access to encrypted data is
+restricted to authorized personnel. Organizations must provide evidence that
+encryption is consistently applied to all sensitive data.
