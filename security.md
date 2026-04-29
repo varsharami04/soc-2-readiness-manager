@@ -391,6 +391,37 @@ The implemented security mechanisms, including input sanitization and rate limit
 *Introduce anomaly detection for suspicious usage patterns
 *Integrate automated security testing tools (e.g., OWASP ZAP)
 
+#11. Day 6 Enhancements
+
+#Security Improvements
+-Added input length validation (max 500 characters)
+-Enhanced malicious pattern detection
+-Implemented request logging for monitoring attacks
+
+#Logging System
+-All blocked requests are stored in security.log
+-Helps in tracking suspicious activity
+-Useful for audit and debugging
+
+#Integration Status
+-AI service successfully integrated with backend using REST API
+-All endpoints tested and validated
+
+#Final Security Status
+The system is secured against:
+-Prompt injection attacks
+-SQL and script injection
+-API abuse (rate limiting)
+-Large payload attacks
+
+System is stable and ready for controlled deployment.
+
+#DAY 8 
+
+Implemented HTTP security headers to mitigate risks identified during ZAP scan. Added X-Content-Type-Options and X-Frame-Options to prevent MIME sniffing and clickjacking attacks. Re-scanned application and confirmed issues resolved.
+
+
+
 
 
 
