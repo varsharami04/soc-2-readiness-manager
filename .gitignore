@@ -24,6 +24,7 @@ chroma_data/
 .springBeans
 .sts4-cache/
 *.launch
+.codex
 *.iml
 *.pdf
 
