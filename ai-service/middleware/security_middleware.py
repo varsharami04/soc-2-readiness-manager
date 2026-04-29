@@ -81,7 +81,7 @@ def security_middleware():
             }), 400
 
         # Replace request data with sanitized version
-        request._cached_json = clean_data
+        request.cleaned_data = clean_data
 
     # If everything is fine → allow request
     return None

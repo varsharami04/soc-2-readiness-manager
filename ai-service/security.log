@@ -26,3 +26,79 @@
 2026-04-27 12:38:51,524 - INFO -  * Restarting with stat
 2026-04-27 12:38:52,015 - WARNING -  * Debugger is active!
 2026-04-27 12:38:52,017 - INFO -  * Debugger PIN: 117-309-599
+2026-04-29 19:30:00,952 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 19:30:00,953 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 19:30:00,956 - INFO -  * Restarting with stat
+2026-04-29 19:30:01,519 - WARNING -  * Debugger is active!
+2026-04-29 19:30:01,521 - INFO -  * Debugger PIN: 117-309-599
+2026-04-29 19:32:20,916 - WARNING -  * Debugger is active!
+2026-04-29 19:32:20,917 - INFO -  * Debugger PIN: 117-309-599
+2026-04-29 19:32:21,239 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 19:32:21,239 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 19:32:21,239 - INFO -  * Restarting with stat
+2026-04-29 19:32:21,734 - WARNING -  * Debugger is active!
+2026-04-29 19:32:21,736 - INFO -  * Debugger PIN: 117-309-599
+2026-04-29 19:34:31,590 - INFO -  * Detected change in 'C:\\campuspe-SOC 2 Project\\ai-service\\app.py', reloading
+2026-04-29 19:34:31,654 - INFO -  * Restarting with stat
+2026-04-29 19:34:32,273 - WARNING -  * Debugger is active!
+2026-04-29 19:34:32,276 - INFO -  * Debugger PIN: 117-309-599
+2026-04-29 19:34:36,490 - WARNING -  * Debugger is active!
+2026-04-29 19:34:36,490 - INFO -  * Debugger PIN: 117-309-599
+2026-04-29 19:34:41,003 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 19:34:41,003 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 19:35:08,172 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 19:35:08,172 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 19:35:08,174 - INFO -  * Restarting with stat
+2026-04-29 19:35:08,637 - WARNING -  * Debugger is active!
+2026-04-29 19:35:08,639 - INFO -  * Debugger PIN: 117-309-599
+2026-04-29 19:37:00,553 - WARNING -  * Debugger is active!
+2026-04-29 19:37:00,553 - INFO -  * Debugger PIN: 117-309-599
+2026-04-29 19:37:04,351 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 19:37:04,352 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 19:37:34,019 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 19:37:34,019 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 19:40:02,826 - INFO - 127.0.0.1 - - [29/Apr/2026 19:40:02] "GET /health HTTP/1.1" 200 -
+2026-04-29 19:40:37,756 - INFO - 127.0.0.1 - - [29/Apr/2026 19:40:37] "[31m[1mPOST /test HTTP/1.1[0m" 400 -
+2026-04-29 19:41:10,112 - INFO - 127.0.0.1 - - [29/Apr/2026 19:41:10] "[35m[1mPOST /test HTTP/1.1[0m" 500 -
+2026-04-29 19:42:52,119 - INFO - 127.0.0.1 - - [29/Apr/2026 19:42:52] "[35m[1mPOST /test HTTP/1.1[0m" 500 -
+2026-04-29 19:46:02,973 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 19:46:02,974 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 19:46:31,371 - INFO - 127.0.0.1 - - [29/Apr/2026 19:46:31] "[33mPOST /test HTTP/1.1[0m" 404 -
+2026-04-29 19:46:43,235 - INFO - 127.0.0.1 - - [29/Apr/2026 19:46:43] "[33mPOST /test HTTP/1.1[0m" 404 -
+2026-04-29 19:50:42,365 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 19:50:42,365 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 19:50:49,113 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 19:50:49,113 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 19:51:48,115 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 19:51:48,115 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 19:51:53,622 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 19:51:53,622 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 20:02:03,209 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 20:02:03,209 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 20:02:06,925 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 20:02:06,925 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 20:05:56,505 - INFO - 127.0.0.1 - - [29/Apr/2026 20:05:56] "GET / HTTP/1.1" 200 -
+2026-04-29 20:06:17,963 - INFO - 127.0.0.1 - - [29/Apr/2026 20:06:17] "GET /health HTTP/1.1" 200 -
+2026-04-29 20:06:46,666 - INFO - 127.0.0.1 - - [29/Apr/2026 20:06:46] "POST /test HTTP/1.1" 200 -
+2026-04-29 20:07:07,472 - INFO - 127.0.0.1 - - [29/Apr/2026 20:07:07] "POST /test HTTP/1.1" 200 -
+2026-04-29 20:08:14,731 - INFO - 127.0.0.1 - - [29/Apr/2026 20:08:14] "GET /health HTTP/1.1" 200 -
+2026-04-29 20:10:26,365 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 20:10:26,381 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 20:14:59,265 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-04-29 20:14:59,265 - INFO - [33mPress CTRL+C to quit[0m
+2026-04-29 20:15:16,260 - INFO - 127.0.0.1 - - [29/Apr/2026 20:15:16] "GET /health HTTP/1.1" 200 -
