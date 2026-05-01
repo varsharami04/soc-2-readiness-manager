@@ -42,7 +42,7 @@ def sanitize_input(data):
     return data
 
 
-#  PII detection (Day 9) — CORRECT PLACE
+# PII detection
 def contains_pii(text):
     email_pattern = r"[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+"
     phone_pattern = r"\b\d{10}\b"
@@ -60,18 +60,36 @@ def security_middleware():
     # Apply only for POST and PUT requests
     if request.method in ["POST", "PUT"]:
 
+        # JWT AUTH CHECK (Day 10)
+        token = request.headers.get("Authorization")
+
+        if not token:
+            logging.warning("Blocked request without JWT token")
+            return jsonify({
+                "error": "Unauthorized",
+                "message": "JWT token missing"
+            }), 401
+
+        # Check Bearer format
+        if not token.startswith("Bearer "):
+            logging.warning("Invalid JWT format")
+            return jsonify({
+                "error": "Unauthorized",
+                "message": "Invalid token format"
+            }), 401
+
+        # Get JSON data
         data = request.get_json(silent=True)
 
         # Invalid or empty input
-        if not data:
-            return jsonify({
-                "error": "Invalid or empty JSON input"
-            }), 400
+        if data is None:
+         return jsonify({
+        "error": "Invalid or empty JSON input"
+    }), 400
 
         # Input too large
         if len(str(data)) > MAX_INPUT_LENGTH:
             logging.warning("Blocked large input")
-
             return jsonify({
                 "error": "Input too large",
                 "message": "Maximum allowed size exceeded"
@@ -80,27 +98,26 @@ def security_middleware():
         # Sanitize input
         clean_data = sanitize_input(data)
 
-        # Convert to string for pattern checking
+        # Convert to string for checks
         combined_text = str(clean_data)
 
-        #  PII DETECTION (correct placement)
+        # PII detection
         if contains_pii(combined_text):
             logging.warning("Blocked request containing possible PII")
             return jsonify({
                 "error": "Sensitive data not allowed"
             }), 400
 
-        # Malicious input detected
+        # Malicious input detection
         if is_malicious(combined_text):
             logging.warning("Blocked malicious input")
-
             return jsonify({
                 "error": "Malicious input detected",
                 "message": "Request blocked due to security policy"
             }), 400
 
-        # Replace request data with sanitized version
+        # Store cleaned data
         request.cleaned_data = clean_data
 
-    # If everything is fine → allow request
+    # Allow request if everything is valid
     return None
