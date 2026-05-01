@@ -13,8 +13,13 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/api/files")
+@Tag(name = "File Attachments", description = "Endpoints for uploading and downloading evidence files")
 public class FileAttachmentController {
 
     private final FileStorageService fileStorageService;
@@ -23,6 +28,9 @@ public class FileAttachmentController {
         this.fileStorageService = fileStorageService;
     }
 
+    @Operation(summary = "Upload a file", description = "Uploads a file and returns its generated UUID filename")
+    @ApiResponse(responseCode = "200", description = "File successfully uploaded")
+    @ApiResponse(responseCode = "400", description = "Invalid file type or size exceeded")
     @PostMapping("/upload")
     public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file) {
         String fileName = fileStorageService.storeFile(file);
@@ -33,6 +41,9 @@ public class FileAttachmentController {
         return ResponseEntity.ok(response);
     }
 
+    @Operation(summary = "Download a file", description = "Downloads a previously uploaded file by its UUID filename")
+    @ApiResponse(responseCode = "200", description = "File successfully downloaded")
+    @ApiResponse(responseCode = "404", description = "File not found")
     @GetMapping("/{id}")
     public ResponseEntity<Resource> downloadFile(@PathVariable String id, HttpServletRequest request) {
         Resource resource = fileStorageService.loadFileAsResource(id);
