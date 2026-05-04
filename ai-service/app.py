@@ -37,7 +37,7 @@ def before_request():
 
 @app.route("/")
 def home():
-    return "Server is working"
+    return "Server is running"
 
 @app.route("/health", methods=["GET"])
 def health():
@@ -62,16 +62,19 @@ def generate_report():
 
 @app.after_request
 def add_security_headers(response):
+    response.headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self';"
     response.headers["X-Content-Type-Options"] = "nosniff"
     response.headers["X-Frame-Options"] = "DENY"
     response.headers["X-XSS-Protection"] = "1; mode=block"
-    response.headers["Content-Security-Policy"] = "default-src 'self'"
+    response.headers["Server"] = "SecureServer"
     return response
 
 
 # RUN APP 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True, use_reloader=False)
+    print("Starting Flask server on http://127.0.0.1:5000")
+    app.run(host="0.0.0.0", port=5000, debug=False)
+  
 
 
