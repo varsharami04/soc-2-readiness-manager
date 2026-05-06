@@ -36,9 +36,11 @@ public class ReadinessItemServiceImpl implements ReadinessItemService {
     private static final int SCORE_MAX = 100;
 
     private final ReadinessItemRepository repository;
+    private final EmailService emailService;
 
-    public ReadinessItemServiceImpl(ReadinessItemRepository repository) {
+    public ReadinessItemServiceImpl(ReadinessItemRepository repository, EmailService emailService) {
         this.repository = repository;
+        this.emailService = emailService;
     }
 
     @Override
@@ -69,6 +71,9 @@ public class ReadinessItemServiceImpl implements ReadinessItemService {
 
         ReadinessItem saved = repository.save(item);
         log.info("Created readiness item id={} controlRef={}", saved.getId(), saved.getControlReference());
+        
+        emailService.sendItemCreatedNotification(saved);
+        
         return saved;
     }
 

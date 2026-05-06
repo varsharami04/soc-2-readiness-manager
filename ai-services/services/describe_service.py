@@ -43,7 +43,8 @@ def generate_description(text: str) -> dict:
                 }
             ],
             temperature=0.3,
-            max_tokens=1000
+            max_tokens=1000,
+            timeout=30
         )
 
         # Step 4 - Extract AI response

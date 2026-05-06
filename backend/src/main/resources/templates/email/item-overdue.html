@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVERDUE: SOC 2 Readiness Task</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background-color: #e74c3c; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
+        .content { background-color: #f9f9f9; padding: 30px; border: 1px solid #ddd; border-top: none; }
+        .footer { background-color: #f1f1f1; padding: 15px; text-align: center; font-size: 12px; color: #666; border-radius: 0 0 5px 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #ffeaea; width: 30%; color: #c0392b; }
+        .badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; color: white; }
+        .priority-HIGH, .priority-CRITICAL { background-color: #e74c3c; }
+        .priority-MEDIUM { background-color: #f39c12; }
+        .priority-LOW { background-color: #3498db; }
+        .btn { display: inline-block; background-color: #e74c3c; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin-top: 20px; }
+        .warning-box { background-color: #fff3f3; border-left: 4px solid #e74c3c; padding: 15px; margin-top: 20px; color: #c0392b; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2 style="margin: 0;">⚠️ ACTION REQUIRED: Overdue SOC 2 Task</h2>
+        </div>
+        <div class="content">
+            <p>Hello <strong th:text="${item.ownerName}">Owner Name</strong>,</p>
+            <p>The following SOC 2 Readiness Task assigned to you is currently <strong>OVERDUE</strong>.</p>
+            
+            <div class="warning-box">
+                This delay poses a risk to our upcoming SOC 2 audit. Please provide a status update or evidence details immediately.
+            </div>
+
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <td th:text="${item.title}">Task Title</td>
+                </tr>
+                <tr>
+                    <th>Control Reference</th>
+                    <td th:text="${item.controlReference}">CC-XXX</td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td><strong style="color: #e74c3c;">OVERDUE</strong></td>
+                </tr>
+                <tr>
+                    <th>Due Date</th>
+                    <td th:text="${#temporals.format(item.dueDate, 'dd MMM yyyy')}" style="font-weight: bold; color: #e74c3c;">01 Jan 2026</td>
+                </tr>
+            </table>
+
+            <div style="text-align: center;">
+                <a href="#" class="btn">Update Task Now</a>
+            </div>
+        </div>
+        <div class="footer">
+            <p>This is an automated priority alert from the SOC 2 Readiness Manager.</p>
+        </div>
+    </div>
+</body>
+</html>

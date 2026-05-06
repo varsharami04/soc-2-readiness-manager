@@ -24,6 +24,7 @@ public class CacheConfig {
     private static final Duration CACHE_TTL = Duration.ofMinutes(10);
 
     @Bean
+    @SuppressWarnings("deprecation")
     public CacheManager cacheManager(RedisConnectionFactory connectionFactory) {
         RedisCacheConfiguration defaultConfiguration = RedisCacheConfiguration.defaultCacheConfig()
                 .entryTtl(CACHE_TTL)

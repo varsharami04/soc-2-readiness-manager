@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSE Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        #output {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            min-height: 200px;
+            font-size: 14px;
+        }
+        button {
+            background: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background: #0052a3;
+        }
+        h1 { color: #00aaff; }
+        #status {
+            color: #00ff88;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SOC 2 Report Streaming Test</h1>
+    <button onclick="startStream()">Generate Report</button>
+    <div id="status">Click button to start streaming...</div>
+    <div id="output"></div>
+
+    <script>
+        function startStream() {
+            // Clear output
+            document.getElementById("output").innerText = ""
+            document.getElementById("status").innerText = "Streaming..."
+
+            let fullText = ""
+
+            // Connect to SSE endpoint
+            const eventSource = new EventSource(
+                "http://localhost:5000/api/generate-report/stream?text=access+control+policy"
+            )
+
+            // Listen for each token
+            eventSource.onmessage = function(event) {
+                const data = JSON.parse(event.data)
+
+                if (data.done) {
+                    // Streaming complete
+                    eventSource.close()
+                    document.getElementById("status").innerText = "✅ Streaming complete!"
+                } else {
+                    // Append token to output
+                    fullText += data.token
+                    document.getElementById("output").innerText = fullText
+                }
+            }
+
+            // Handle errors
+            eventSource.onerror = function(error) {
+                eventSource.close()
+                document.getElementById("status").innerText = "❌ Streaming error!"
+                console.error("SSE Error:", error)
+            }
+        }
+    </script>
+</body>
+</html>

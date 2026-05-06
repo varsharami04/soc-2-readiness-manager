@@ -1,5 +1,42 @@
+# Environment and local secrets
 .env
+dev_token.txt
+
+# Build and runtime outputs
+target/
+uploads/
+node_modules/
+__pycache__/
+chroma_data/
+*.class
+*.jar
+*.log
+
+# IDE and editor files
 .idea/
+.vscode/
+.metadata/
+.settings/
+.classpath
+.project
+.factorypath
+.apt_generated/
+.apt_generated_tests/
+.springBeans
+.sts4-cache/
+*.launch
+.codex
+*.iml
+*.pdf
+
+
+
+# OS files
+.DS_Store
+
+
+
+
 __pycache__/
 *.pyc
 *.pyo

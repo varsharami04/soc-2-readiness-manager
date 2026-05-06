@@ -1,3 +1,96 @@
+# Tool-16 — SOC 2 Readiness Manager
+
+## Overview
+SOC 2 Readiness Manager is an AI-powered web application built as an MVP Capstone Project. It helps organizations track, manage, and audit their compliance readiness for SOC 2 controls. The application provides a robust backend utilizing a modern Java stack with role-based access control, caching, and an integrated Python AI microservice for automated compliance analysis and reporting.
+
+## Architecture
+
+```text
+                               +-------------------------+
+                               |     React Frontend      |
+                               |    (Vite, Tailwind)     |
+                               +-----------+-------------+
+                                           | HTTP/REST (JWT)
+                                           v
++-------------------+          +-------------------------+          +-------------------+
+|    Redis 7        | <------> |   Spring Boot Backend   | -------> | JavaMailSender    |
+| (Response Caching)|          |       (Java 17)         |          | (Email Alerts)    |
++-------------------+          +---+-----------------^---+          +-------------------+
+                                   |                 |
+                               JDBC|                 | HTTP/REST
+                                   v                 v
++-------------------+          +-------------------------+          +-------------------+
+|  PostgreSQL 15    |          |    Flask AI Service     | -------> |    ChromaDB       |
+|  (Core Database)  |          |       (Python 3)        |          |  (Vector Store)   |
++-------------------+          +-----------+-------------+          +-------------------+
+                                           |
+                                           v
+                               +-------------------------+
+                               |        Groq API         |
+                               |     (LLaMA-3.3-70b)     |
+                               +-------------------------+
+```
+
+## Prerequisites
+Before running this project, ensure you have the following installed on your machine:
+- **Java 17** (Adoptium recommended)
+- **Maven** (or use the included `./mvnw` wrapper)
+- **Docker & Docker Compose** (for running the full stack: Postgres, Redis, AI Service)
+- **Python 3.11** (If running the AI service locally outside of Docker)
+- **Git**
+
+## Setup Steps
+1. **Clone the repository:**
+   ```bash
+   git clone <repository_url>
+   cd soc-2-readiness-manager
+   ```
+
+2. **Configure Environment Variables:**
+   Create a `.env` file from the provided example template and fill in your secrets (especially your Groq API key and a secure JWT secret).
+   ```bash
+   cp .env.example .env
+   ```
+
+3. **Start the Infrastructure (Docker):**
+   You can spin up the entire application stack including the database, cache, backend, frontend, and AI microservice using Docker Compose:
+   ```bash
+   docker-compose up --build
+   ```
+
+   *(Alternatively, to run the Spring Boot backend natively for development)*:
+   ```bash
+   cd backend
+   ./mvnw spring-boot:run
+   ```
+
+4. **Verify Application Health:**
+   - **Backend API & Swagger Docs**: `http://localhost:8080/swagger-ui.html`
+   - **Frontend Application**: `http://localhost:80`
+   - **AI Microservice Health**: `http://localhost:5000/health`
+
+## Environment Variables (`.env.example` Reference)
+
+| Variable | Description | Default / Example Value |
+|----------|-------------|-------------------------|
+| `DB_URL` | PostgreSQL connection string | `jdbc:postgresql://postgres:5432/soc2_db` |
+| `DB_USERNAME` | Database user | `postgres` |
+| `DB_PASSWORD` | Database password | `secret_password` |
+| `JPA_SHOW_SQL` | Toggle Hibernate SQL logging | `false` |
+| `REDIS_HOST` | Redis cache server host | `redis` |
+| `REDIS_PORT` | Redis cache server port | `6379` |
+| `REDIS_PASSWORD` | Redis password (if any) | `""` |
+| `MAIL_HOST` | SMTP server for email notifications | `mailhog` |
+| `MAIL_PORT` | SMTP port | `1025` |
+| `MAIL_USERNAME` | SMTP username | `""` |
+| `MAIL_PASSWORD` | SMTP password | `""` |
+| `JWT_SECRET` | 32+ char secret for signing JWTs | `your-secure-development-32-char-jwt-secret!` |
+| `JWT_EXPIRATION_MS` | JWT validity duration (in ms) | `86400000` (24 hours) |
+| `SERVER_PORT` | Spring Boot API port | `8080` |
+| `GROQ_API_KEY` | API Key for Groq LLaMA models | `gsk_...` |
+
+---
+
 #AI Security Middleware for SOC 2 Compliance
 
 #Project Overview
@@ -135,5 +228,3 @@ SECURITY.md
 #Conclusion
 
 This project demonstrates a secure AI service that protects against common vulnerabilities and ensures safe API usage. It is designed with a focus on **security, reliability, and compliance**.
-
-

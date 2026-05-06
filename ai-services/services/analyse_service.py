@@ -14,18 +14,18 @@ def load_prompt_template() -> str:
         os.path.dirname(__file__),
         "..",
         "prompts",
-        "recommend_prompt.txt"
+        "analyse_prompt.txt"
     )
     with open(template_path, "r") as f:
         return f.read()
 
 
-def generate_recommendations(text: str) -> dict:
+def analyse_document(text: str) -> dict:
     try:
         # Step 1 - Load prompt template
         template = load_prompt_template()
 
-        # Step 2 - Replace {input} with actual user input
+        # Step 2 - Replace {input} with actual document text
         prompt = template.replace("{input}", text)
 
         # Step 3 - Call Groq API
@@ -34,7 +34,7 @@ def generate_recommendations(text: str) -> dict:
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a SOC 2 compliance expert. Always respond with valid JSON only. No extra text."
+                    "content": "You are a SOC 2 compliance expert and security auditor. Always respond with valid JSON only. No extra text."
                 },
                 {
                     "role": "user",
@@ -42,58 +42,62 @@ def generate_recommendations(text: str) -> dict:
                 }
             ],
             temperature=0.3,
-            max_tokens=1000,
+            max_tokens=2000,
             timeout=30
         )
 
         # Step 4 - Extract AI response
         result = response.choices[0].message.content.strip()
 
-        # Step 5 - Parse JSON response
-        recommendations = json.loads(result)
+        # Step 5 - Clean response if needed
+        if result.startswith("```"):
+            result = result.split("```")[1]
+            if result.startswith("json"):
+                result = result[4:]
 
-        # Step 6 - Return structured response
+        # Step 6 - Parse JSON response
+        analysis = json.loads(result)
+
+        # Step 7 - Return structured response
         return {
-            "input": text,
-            "recommendations": recommendations,
-            "total": len(recommendations),
+            "input_length": len(text),
+            "findings": analysis.get("findings", []),
+            "summary": analysis.get("summary", ""),
+            "total_findings": len(analysis.get("findings", [])),
             "generated_at": datetime.utcnow().isoformat(),
             "status": "success",
             "is_fallback": False
         }
 
+
     except json.JSONDecodeError as e:
         print(f"JSON parsing error: {e}")
+        print(f"Raw response was: {result}")
         return fallback_response(text)
 
+
     except Exception as e:
-        print(f"Error generating recommendations: {e}")
+        print(f"Error analysing document: {e}")
+        import traceback
+        traceback.print_exc()
         return fallback_response(text)
 
 
 def fallback_response(text: str) -> dict:
     return {
-        "input": text,
-        "recommendations": [
+        "input_length": len(text),
+        "findings": [
             {
-                "action_type": "Policy",
-                "description": "Develop and implement a formal policy for this control.",
-                "priority": "High"
-            },
-            {
-                "action_type": "Technical",
-                "description": "Implement technical controls to enforce this requirement.",
-                "priority": "High"
-            },
-            {
-                "action_type": "Training",
-                "description": "Conduct training sessions for all relevant staff.",
-                "priority": "Medium"
+                "type": "risk",
+                "category": "General",
+                "finding": "Unable to analyse document at this time.",
+                "severity": "medium",
+                "recommendation": "Please try again later."
             }
         ],
-        "total": 3,
+        "summary": "Document analysis failed. Please try again.",
+        "total_findings": 1,
         "generated_at": datetime.utcnow().isoformat(),
-        "status": "success",
+        "status": "failed",
         "is_fallback": True
     }
-

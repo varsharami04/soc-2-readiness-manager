@@ -55,8 +55,13 @@ class ReadinessItemServiceCachingTest {
         }
 
         @Bean
-        ReadinessItemService readinessItemService(ReadinessItemRepository repository) {
-            return new ReadinessItemServiceImpl(repository);
+        EmailService emailService() {
+            return Mockito.mock(EmailService.class);
+        }
+
+        @Bean
+        ReadinessItemService readinessItemService(ReadinessItemRepository repository, EmailService emailService) {
+            return new ReadinessItemServiceImpl(repository, emailService);
         }
 
         @Bean

@@ -8,6 +8,12 @@ spring:
       time-to-live: 10m
       cache-null-values: false
 
+  # Multipart Upload Configuration
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
   # Database Configuration
   datasource:
     url: ${DB_URL}
@@ -18,7 +24,7 @@ spring:
   # JPA & Hibernate
   jpa:
     hibernate:
-      ddl-auto: validate # Use validate since Flyway handles migrations
+      ddl-auto: update # Temporarily use update since Flyway is disabled
     show-sql: ${JPA_SHOW_SQL:false}
     properties:
       hibernate:
@@ -26,7 +32,7 @@ spring:
 
   # Flyway Database Migrations
   flyway:
-    enabled: true
+    enabled: false
     baseline-on-migrate: true
     locations: classpath:db/migration
 
@@ -58,3 +64,7 @@ jwt:
 # Server Configuration
 server:
   port: ${SERVER_PORT:8080}
+
+# File Upload Configuration
+file:
+  upload-dir: uploads
