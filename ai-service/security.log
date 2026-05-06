@@ -1265,3 +1265,64 @@
 2026-05-05 13:42:30,087 - INFO -  * Restarting with stat
 2026-05-05 13:42:30,439 - WARNING -  * Debugger is active!
 2026-05-05 13:42:30,441 - INFO -  * Debugger PIN: 117-309-599
+2026-05-06 08:17:06,841 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-06 08:17:06,842 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:17:06,844 - INFO -  * Restarting with stat
+2026-05-06 08:17:07,619 - WARNING -  * Debugger is active!
+2026-05-06 08:17:07,625 - INFO -  * Debugger PIN: 117-309-599
+2026-05-06 08:18:51,088 - INFO -  * Detected change in 'C:\\campuspe-SOC 2 Project\\ai-service\\app.py', reloading
+2026-05-06 08:18:51,235 - INFO -  * Restarting with stat
+2026-05-06 08:18:51,886 - WARNING -  * Debugger is active!
+2026-05-06 08:18:51,893 - INFO -  * Debugger PIN: 117-309-599
+2026-05-06 08:19:02,636 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-06 08:19:02,636 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:22:04,243 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-06 08:22:04,244 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:22:04,245 - INFO -  * Restarting with stat
+2026-05-06 08:22:04,779 - WARNING -  * Debugger is active!
+2026-05-06 08:22:04,782 - INFO -  * Debugger PIN: 117-309-599
+2026-05-06 08:28:52,553 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-06 08:28:52,554 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:33:12,501 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.10.2:5000
+2026-05-06 08:33:12,502 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:34:20,881 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.10.2:5000
+2026-05-06 08:34:20,881 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:34:59,380 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-06 08:34:59,380 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:36:10,201 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-06 08:36:10,201 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:36:32,179 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-06 08:36:32,179 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:36:52,508 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-06 08:36:52,508 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:37:19,975 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-06 08:37:19,975 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:38:38,720 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-06 08:38:38,720 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:38:54,759 - INFO - 127.0.0.1 - - [06/May/2026 08:38:54] "GET / HTTP/1.1" 200 -
+2026-05-06 08:38:54,932 - INFO - 127.0.0.1 - - [06/May/2026 08:38:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-06 08:45:43,924 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-06 08:45:43,924 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-06 08:45:50,206 - INFO - 127.0.0.1 - - [06/May/2026 08:45:50] "GET / HTTP/1.1" 200 -
+2026-05-06 08:45:50,365 - INFO - 127.0.0.1 - - [06/May/2026 08:45:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-06 08:47:14,526 - INFO - 127.0.0.1 - - [06/May/2026 08:47:14] "POST /test HTTP/1.1" 200 -
+2026-05-06 08:48:26,482 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-06 08:48:26,482 - INFO - [33mPress CTRL+C to quit[0m
