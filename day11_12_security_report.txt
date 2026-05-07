@@ -1,0 +1,16 @@
+Day 11 & 12 Security Implementation Summary
+
+- Conducted OWASP ZAP Active Scan
+- Identified and fixed all Critical and High vulnerabilities
+- Implemented:
+  - JWT Authentication
+  - Input Sanitization
+  - Rate Limiting
+  - PII Detection
+- Integrated Flask-Talisman for standardized security headers
+- Enforced Content Security Policy (CSP)
+- Re-scanned application → No Critical/High vulnerabilities found
+- Medium risks documented and accepted/planned
+
+Conclusion:
+Application meets baseline security requirements aligned with SOC 2 principles.

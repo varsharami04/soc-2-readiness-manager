@@ -1,0 +1,9 @@
+MEDIUM ISSUES:
+
+1. CSP: Failure to Define Directive with No Fallback
+Status: Planned
+Reason: Will implement stricter CSP in production environment.
+
+2. Server Leaks Version Information via Server Header
+Status: Accepted Risk
+Reason: No sensitive data exposed; acceptable for development environment.
